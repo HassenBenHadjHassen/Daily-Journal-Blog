@@ -73,7 +73,11 @@ app.get("/posts/:post",function (req, res) {
 });
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5500;
+}
 
-app.listen(5500, function() {
+app.listen(port, function() {
   console.log("Server started on port 5500");
 });
